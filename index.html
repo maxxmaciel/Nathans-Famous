@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>Nathan's Famous</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+
+  <body translate="no">
+    <header>
+    <img src='src/img/capa_nathans.png' />
+    </header>
+    <main></main>
+    <footer></footer>
+  </body>
+
+  <script src="js/lib/jquery/3.6.1/jquery-3.6.1.min.js"></script>
+  <script src="js/lib/std/std.js"></script>
+  <script src="js/lib/vt/consts.js"></script>
+  <script src="js/lib/vt/vt.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- <script src="consts.js"></script> -->
+
+  <script>
+    var data = [
+      {
+        name: "Bowls",
+        toppings_name: "UNLIMITED TOPPINGS",
+        extra_toppings_name: "ACRESCENTE:",
+        image:"src/img/humburguer.png",
+        sold_out: false, //esgotado
+        products: [
+          {
+            name: "Classic",
+            size: "16oz / 120ml",
+            value: 10.99,
+            obs: "teste",
+          },
+          {
+            name: "Works",
+            size: "16oz / 500 ml",
+            value: 13.99,
+          },
+          {
+            name: "The OAK",
+            size: "24oz / 720Ml",
+            value: 16.99,
+          },
+        ],
+        toppings: [
+          { name: "ingredient_1", obs: "teste" },
+          { name: "ingredient_2" },
+          { name: "ingredient_3" },
+          { name: "ingredient_4" },
+        ],
+        extra_toppings: [
+          {
+            name: "Almond Butter",
+            value_add: 1.5,
+            obs: "teste",
+          },
+          {
+            name: "Almond",
+            value_add: 1.5,
+            obs: "teste",
+          },
+          {
+            name: "Almond Butter",
+            value_add: 1.5,
+            obs: "teste",
+          },
+          {
+            name: "Almond Butter",
+            value_add: 1.5,
+            obs: "teste",
+          },
+          {
+            name: "Almond",
+            value_add: 1.5,
+            obs: "teste",
+          },
+          {
+            name: "Almond Butter",
+            value_add: 1.5,
+            obs: "teste",
+          },
+          {
+            name: "Almond Butter",
+            value_add: 1.5,
+            obs: "teste",
+          },
+          {
+            name: "Almond Butter",
+            value_add: 1.5,
+            obs: "teste",
+          },
+          {
+            name: "Almond Butter",
+            value_add: 1.5,
+            obs: "teste",
+          },
+        ],
+      },
+      {
+        name: "Smoothies",
+        image: "",
+        toppings_name: "UNLIMITED TOPPINGS",
+        extra_toppings_name: "ACRESCENTE:",
+        products: [
+          {
+            name: "Classic",
+            size: "16oz / 120ml",
+            value: 1.0,
+            obs: "teste",
+          },
+          {
+            name: "Works",
+            size: "16oz / 500 ml",
+            value: 1.0,
+          },
+          {
+            name: "The OAK",
+            size: "24oz / 720Ml",
+            value: 1.0,
+          },
+        ],
+        toppings: [
+          { name: "ingredient_1", obs: "teste" },
+          { name: "ingredient_2" },
+          { name: "ingredient_3" },
+          { name: "ingredient_4" },
+        ],
+        extra_toppings: [
+          {
+            name: "Almond Butter",
+            value_add: 1.0,
+            obs: "teste",
+          },
+          {
+            name: "Almond",
+            value_add: 1.5,
+            obs: "teste",
+          },
+        ],
+        sold_out: false, //esgotado
+      },
+      {
+        name: "Smoothies",
+        image: "",
+        toppings_name: "UNLIMITED TOPPINGS",
+        extra_toppings_name: "ACRESCENTE:",
+        products: [
+          {
+            name: "Classic",
+            size: "16oz / 120ml",
+            value: 1.0,
+            obs: "teste",
+          },
+          {
+            name: "Works",
+            size: "16oz / 500 ml",
+            value: 1.0,
+          },
+          {
+            name: "The OAK",
+            size: "24oz / 720Ml",
+            value: 1.0,
+          },
+        ],
+        toppings: [
+          { name: "ingredient_1", obs: "teste" },
+          { name: "ingredient_2" },
+          { name: "ingredient_3" },
+          { name: "ingredient_4" },
+        ],
+        extra_toppings: [
+          {
+            name: "Almond Butter",
+            value_add: 1.0,
+            obs: "teste",
+          },
+          {
+            name: "Almond",
+            value_add: 1.5,
+            obs: "teste",
+          },
+        ],
+        sold_out: false, //esgotado
+      },
+      {
+        name: "Smoothies",
+        image: "",
+        toppings_name: "UNLIMITED TOPPINGS",
+        extra_toppings_name:"ACRESCENTE:",
+        products: [
+          {
+            name: "Classic",
+            size: "16oz / 120ml",
+            value: 1.0,
+            obs: "teste",
+          },
+          {
+            name: "Works",
+            size: "16oz / 500 ml",
+            value: 1.0,
+          },
+          {
+            name: "The OAK",
+            size: "24oz / 720Ml",
+            value: 1.0,
+          },
+        ],
+        toppings: [
+          { name: "ingredient_1", obs: "teste" },
+          { name: "ingredient_2" },
+          { name: "ingredient_3" },
+          { name: "ingredient_4" },
+        ],
+        extra_toppings: [
+          {
+            name: "Almond Butter",
+            value_add: 1.0,
+            obs: "teste",
+          },
+          {
+            name: "Almond",
+            value_add: 1.5,
+            obs: "teste",
+          },
+        ],
+        sold_out: false, //esgotado
+      },
+    ];
+
+    var g = {
+      nodes: {
+        main: {
+          selector: "main",
+        },
+      },
+    };
+
+    onload = () => render_main();
+  </script>
+</html>

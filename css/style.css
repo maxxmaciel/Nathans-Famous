@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+:root {
+  --category: rgb(229, 223, 213);
+  --grey: rgb(128, 130, 133);
+}
+
+@font-face {
+  font-family: Vhiena_Base;
+  src: url(../src/font/Vhiena_Base.otf);
+}
+
+@font-face {
+  font-family: Liquorstore_3D;
+  src: url(../src/font/Liquorstore\ W00\ 3D.ttf);
+}
+
+@font-face {
+  font-family: Futura_Heavy;
+  src: url(../src/font/Futura\ Heavy\ font.ttf);
+}
+
+@font-face {
+  font-family: Futura_Bold;
+  src: url(../src/font/unicode.futurab.ttf);
+  
+}
+
+header {
+  height: 74vw;
+  font-family: Vhiena_BaseItalic;
+  /* color: var(--category); */
+}
+
+main {
+  margin-bottom: 7vw;
+}
+
+body {
+  background: url('../src/img/background.png');
+  background-size: 100% auto;
+}
+
+
+header >img{
+  width: 100%;
+}
+
+header p {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 6vw;
+  font-size: 9vw;
+  -webkit-text-stroke-width: 0.8vw;
+  -webkit-text-stroke-color: #2C3232;
+}
+header span {
+  font-size: 4.5vw;
+  -webkit-text-stroke-width: 0.4vw;
+  -webkit-text-stroke-color: #2C3232;
+}
+
+footer {
+  /* background: #2C3232; */
+}
+
+
+
+.c_category{
+  background: #F2F3F4;
+  width: 83vw;
+  margin: 8.7vw auto;
+  border: #1E7737 solid 0.7vw;
+  border-radius: 4vw;
+}
+
+.category {
+  height: 16vw;
+  /* background: var(--category); */
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: Liquorstore_3D;
+  color: #2C3232;
+  font-size: 8vw;
+  -webkit-text-stroke: 1px vermelho;
+  -webkit-text-stroke: 1px vermelho;
+  /* -webkit-text-stroke-width: 0.6vw; */
+  /* letter-spacing: 1.2vw; */
+  /* letter-spacing: 4px; */
+  /* -webkit-text-stroke-color: #2C3232; */
+  /* letter-spacing: 4px; */
+  rotate: -3deg;
+  /* transform: rotateX(33deg); */
+  margin-top: 1vw;
+}
+
+
+.product {
+  height: 11vw;
+  margin: 0 auto;
+  display: flex;
+  width: 90%;
+}
+
+.product .c-1 {
+  height: 47%;
+  float: left;
+  display: flex;
+  font-family: Vhiena_Base;
+  color: #1E7737;
+  /* margin-top: 7vw; */
+  font-size: 5.7vw;
+  align-content: flex-end;
+  align-items: flex-end;
+}
+
+.product .c-1 .money{
+  
+padding-left: 3.5vw;
+  
+font-family: Futura_Bold;
+  
+color: #2C3232;
+  
+font-size: 3vw;
+}
+
+
+.product .c-1 span {
+  font-family: Futura_Heavy;
+  color: #1E7737;
+  font-size: 3vw;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 0.6vw;
+  height: 100%;
+  padding-left: 6px;
+}
+
+.product .c-2 {
+  height: 50%;
+  font-family: 'Futura_Heavy';
+  font-size: 2vw;
+  color: #2C3232;
+}
+
+.product .c-3 {
+  display: flex;
+  align-items: flex-start;
+  font-size: 6vw;
+  /* padding-top: 5vw; */
+  font-family: Vhiena_Base;
+  color: #2C3232;
+  width: 30%;
+  justify-content: flex-end;
+}
+.product .c-3 span {
+  font-size: 3vw;
+  width: 3vw;
+  padding-top: 17px;
+  padding-right: 16px;
+}
+
+.w-100vw {
+  width: 100vw;
+}
+
+.c_1 {
+  width: 100%;
+  margin: auto;
+}
+
+.c_2 {
+  /* width: 95%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c_2 img {
+  max-width: 50%;
+  max-height: 100%;
+  /* margin: auto; */
+}
+
+.c_products {
+  display: flex;
+  margin: 0 auto;
+  width: 85%;
+  justify-content: center;
+}
+
+.title_toppings {
+  min-height: 12vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  clear: both;
+  font-family: Vhiena_Base;
+  color: #2C3232;
+  font-size: 4.5vw;
+  margin: auto;
+  /* border-radius: 30px; */
+  border-radius: 6vw;
+}
+
+.title_toppings >p{
+  margin: 0 2vw;
+  color: #1E7737;
+}
+
+.toppings {
+  width: 50%;
+  float: left;
+  display: flex;
+  font-size: 3vw;
+  color: #2C3232;
+  font-family: Vhiena_Base;
+}
+
+.extra_toppings {
+  width: auto;
+  float: left;
+  font-size: 2vw;
+  height: 4vw;
+  display: flex;
+  white-space: nowrap;
+  /* font-family: Vhiena_Base; */
+  font-family: Futura_Bold;
+  align-items: center;
+  color: #2C3232;
+  margin-right: 4vw;
+  min-width: 43%;
+}
+
+.line {
+  float: left;
+  height: 2px;
+  background: #2C3232;
+  width: -webkit-fill-available;
+  margin: 0 7px;
+}
+
+.value_add {
+  float: left;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  font-size: 3vw;
+  height: 4vw;
+  align-items: center;
+  color: #2C3232;
+  font-family: "Futura_Heavy";
+}
+.c_extra_toppings {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 100%;
+  width: 76%;
+  gap: 1vw 0;
+  justify-content: flex-start;
+  margin: 1vw;
+}
+
+/*LIB */
+
+.d-flex {
+  display: flex;
+}
+
+.flex-direction-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.w-70 {
+  width: 100%;
+}
+
+.toppings span {
+    font-family: Futura_Heavy;
+    color: #2C3232;
+    font-size: 2.5vw;
+    display: flex;
+    align-items: center;
+}
+
+.extra_toppings span {
+  font-family: Futura_Heavy;
+  color: #2C3232;
+  font-size: 2.5vw;
+  display: flex;
+  align-items: center;
+}
