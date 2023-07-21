@@ -112,21 +112,22 @@ header span {
   font-family: Vhiena_Base;
   color: #1e7737;
   /* margin-top: 7vw; */
-  font-size: 8vw;
+  font-size: 7vw;
   align-items: flex-end;
   line-height: 0.8;
 }
 
 .product .c-1 > p {
-  max-width: 74%;
+  max-width: 72%;
   height: 100%;
   align-items: center;
   display: flex;
+  margin-right: 4vw;
   padding-bottom: 0.5vw;
 }
 
 .product .c-1 .money {
-  padding-left: 3.5vw;
+  /* padding-left: 3.5vw; */
   /* padding-bottom: 0.8vw; */
   font-family: Futura_Bold;
   color: #2c3232;
