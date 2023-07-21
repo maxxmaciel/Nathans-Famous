@@ -106,7 +106,7 @@ header span {
 }
 
 .product .c-1 {
-  min-height: 39px;
+  min-height: 12vw;
   float: left;
   display: flex;
   font-family: Vhiena_Base;

@@ -1,70 +1,33 @@
 function render_main() {
   load_nodes(g.nodes);
   let text = "";
+
   for (let idx in data) {
     let el = data[idx];
     var p = el.products;
 
-    text += /*html*/ `
+    text += /*html*/ `   
     <div class="c_products" style="flex-direction: column">
      <div class="c_1"> 
-     <div class="c_category">
-     <div class="category">
-     ${std.ensure(el, KEY.NAME, "")}
-     </div>
-    `;
-    for (let idx in p) {
-      let el = p[idx];
-      var r = replaceAndFindParentheses(std.ensure(el, KEY.NAME, ""));
-
-      text += /*html*/ `
-      <div class="product"> 
-        <div class="flex-direction-column w-70">
-         <div class="c-1"> 
-          ${r.name} ${!std.is_null(r.obs) ? /*html*/ ` <span>${r.obs} </span>` : ""}
-          <div class="money">R$ ${replaceDotsWithCommas(std.ensure(el, KEY.VALUE, 0).toFixed(2))} </div>  
+      <div class="c_category">
+       <div class="category">
+         ${std.ensure(el, KEY.NAME, "")}
+       </div>
+         ${ensureProduct(p)}
+        <div class="c_2"> 
+          <img src="${std.ensure(el, KEY.IMAGE, "")}" />
         </div>
-        <div class="c-2">
-        ${std.ensure(el, KEY.SIZE, "")}
+      </div> 
+    <div class="title_toppings c_category">
+      <p> ${std.ensure(el, KEY.EXTRA_TOPPINGS_NAME, '')} </p>
+        <div class="c_extra_toppings">
+           ${ensureExtraToppings(el.extra_toppings)}
         </div>
-        </div>
-      </div>
-    
-      `;
-    }
-
-    text += /*html*/ `   
-    <div class="c_2"> 
-      <img src="${std.ensure(el, KEY.IMAGE, "")}" />
-    </div>
-    
-    </div> <div class="title_toppings c_category"><p> ${std.ensure(el, KEY.EXTRA_TOPPINGS_NAME, '')} </p>
-    <div class="c_extra_toppings">
-    `;
-    var t_2 = el.extra_toppings;
-
-    for (let idx in t_2) {
-      let el = t_2[idx];
-      var r = replaceAndFindParentheses(std.ensure(el, KEY.NAME, ""));
-
-      text += /*html*/ `
-     
-        <div class="extra_toppings">+${r.name} ${!std.is_null(r.obs) ? /*html*/ `<span>${r.obs}</span>` : ""
-        } - R$${replaceDotsWithCommas(
-          std
-            .ensure(el, KEY.VALUE_ADD, 0)
-            .toFixed(2))}
         </div> 
-  
-      `;
-    }
-    text += /*html*/ ` 
-    </div>
-    </div> 
-    </div> 
-    
+      </div> 
     </div>
     `;
+
   }
   g.nodes.main.nodes.html(text);
 }
@@ -94,7 +57,7 @@ function reassign_node(vt_node) {
 function replaceAndFindParentheses(text) {
   var r2 = null;
   var r1 = text.replace(REGEX.FIND_PARENTHESES, (a) => {
-    r2 = a;
+    r2 = a; ''
     return "";
   });
   return { name: r1, obs: r2 };
@@ -102,12 +65,53 @@ function replaceAndFindParentheses(text) {
 
 
 function replaceDotsWithCommas(texto) {
-  // Utilizamos a expressão regular /\./g para substituir todos os pontos pela vírgula.
   const textoComVirgulas = texto.replace(/\./g, ',');
   return textoComVirgulas;
 }
 
+function ensureProduct(p) {
+  let text = ""
+  for (let idx in p) {
+    let el = p[idx];
+    var r = replaceAndFindParentheses(std.ensure(el, KEY.NAME, ""));
 
+    text += /*html*/ `
+    <div class="product"> 
+      <div class="flex-direction-column w-70">
+        <div class="c-1"> 
+          <p> ${r.name} ${!std.is_null(r.obs) ? /*html*/ ` <span>${r.obs} </span>` : ""}</p>
+     
+        <div class="money">R$ ${replaceDotsWithCommas(std.ensure(el, KEY.VALUE, 0).toFixed(2))} </div>  
+      </div>
+       <div class="c-2">
+         ${std.ensure(el, KEY.SIZE, "")}
+       </div>
+      </div>
+    </div>
+  
+    `;
+  }
+  return text;
+}
+
+function ensureExtraToppings(t_2) {
+  let text = ""
+  for (let idx in t_2) {
+    let el = t_2[idx];
+    var r = replaceAndFindParentheses(std.ensure(el, KEY.NAME, ""));
+
+    text += /*html*/ `
+      <div class="extra_toppings">+${r.name} ${!std.is_null(r.obs) ? /*html*/ `<span>${r.obs}</span>` : ""
+      } - R$${replaceDotsWithCommas(
+        std
+          .ensure(el, KEY.VALUE_ADD, 0)
+          .toFixed(2))}
+      </div> 
+
+    `;
+  }
+  return text;
+}
 /* 
 function showNode(x) {
 
