@@ -74,14 +74,14 @@ footer {
 
 .c_category{
   background: #F2F3F4;
-  width: 83vw;
+  width: 90vw;
   margin: 8.7vw auto;
   border: #1E7737 solid 0.7vw;
   border-radius: 4vw;
 }
 
 .category {
-  height: 16vw;
+  height: 18vw;
   /* background: var(--category); */
   margin: 0 auto;
   width: 100%;
@@ -93,7 +93,7 @@ footer {
   text-transform: uppercase;
   font-family: Liquorstore_3D;
   color: #2C3232;
-  font-size: 8vw;
+  font-size: 10vw;
   -webkit-text-stroke: 1px vermelho;
   -webkit-text-stroke: 1px vermelho;
   /* -webkit-text-stroke-width: 0.6vw; */
@@ -121,7 +121,7 @@ footer {
   font-family: Vhiena_Base;
   color: #1E7737;
   /* margin-top: 7vw; */
-  font-size: 5.7vw;
+  font-size: 7.7vw;
   align-content: flex-end;
   align-items: flex-end;
 }
@@ -134,7 +134,7 @@ font-family: Futura_Bold;
   
 color: #2C3232;
   
-font-size: 3vw;
+font-size: 4vw;
 }
 
 
@@ -152,7 +152,7 @@ font-size: 3vw;
 .product .c-2 {
   height: 50%;
   font-family: 'Futura_Heavy';
-  font-size: 2vw;
+  font-size: 3vw;
   color: #2C3232;
 }
 
@@ -198,7 +198,7 @@ font-size: 3vw;
 .c_products {
   display: flex;
   margin: 0 auto;
-  width: 85%;
+  width: 100%;
   justify-content: center;
 }
 
@@ -210,7 +210,7 @@ font-size: 3vw;
   clear: both;
   font-family: Vhiena_Base;
   color: #2C3232;
-  font-size: 4.5vw;
+  font-size: 6.5vw;
   margin: auto;
   /* border-radius: 30px; */
   border-radius: 6vw;
@@ -233,7 +233,7 @@ font-size: 3vw;
 .extra_toppings {
   width: auto;
   float: left;
-  font-size: 2vw;
+  font-size: 3vw;
   height: 4vw;
   display: flex;
   white-space: nowrap;
