@@ -108,27 +108,28 @@ footer {
 
 
 .product {
-  height: 11vw;
+  height: 14vw;
   margin: 0 auto;
   display: flex;
   width: 90%;
 }
 
 .product .c-1 {
-  height: 47%;
+  height: 50%;
   float: left;
   display: flex;
   font-family: Vhiena_Base;
   color: #1E7737;
   /* margin-top: 7vw; */
   font-size: 7.7vw;
-  align-content: flex-end;
   align-items: flex-end;
 }
 
 .product .c-1 .money{
   
 padding-left: 3.5vw;
+  
+padding-bottom: 0.4vw;
   
 font-family: Futura_Bold;
   
