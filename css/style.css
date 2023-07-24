@@ -112,19 +112,19 @@ header span {
   font-family: Vhiena_Base;
   color: #1e7737;
   /* margin-top: 7vw; */
-  font-size: 7vw;
+  font-size: 6vw;
   align-items: flex-end;
   line-height: 0.8;
 }
 
 .product .c-1 > p {
-  max-width: 72%;
+  max-width: 61%;
   min-height: 8vw;
   /* height: 100%; */
   align-items: center;
   display: flex;
-  margin-right: 4vw;
-  padding-bottom: 0.5vw;
+  margin-right: 3vw;
+  /* padding-bottom: 0.5vw; */
 }
 
 .product .c-1 .money {
@@ -133,8 +133,7 @@ header span {
   font-family: Futura_Bold;
   color: #2c3232;
   display: flex;
-  font-size: 4vw;
-  /* height: 100%; */
+  font-size: 3.2vw;
   align-items: center;
   min-height: 8vw;
 }
@@ -212,7 +211,7 @@ header span {
   clear: both;
   font-family: Vhiena_Base;
   color: #2c3232;
-  font-size: 7vw;
+  font-size: 6vw;
   margin: auto;
   /* border-radius: 30px; */
   border-radius: 6vw;

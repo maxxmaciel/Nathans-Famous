@@ -58,6 +58,16 @@ function replaceParentheses(text) {
   return { name: r1, obs: r2 };
 }
 
+function ensureDescriptionAndValue(p) {
+    let description = std.ensure(p, KEY.DESCRIPTION, "")
+    let value = replaceDotsWithCommas(std.ensure(p, KEY.VALUE, 0).toFixed(2))
+    if(description == "") {
+      return `R$${value}`
+    }else {
+      return `${description} - R$${value}`
+    }
+}
+
 function ensureProduct(p, text = "") {
   for (let idx in p) {
     let el = p[idx];
@@ -68,7 +78,7 @@ function ensureProduct(p, text = "") {
       <div class="flex-direction-column w-70">
         <div class="c-1"> 
           <p> ${r.name} ${!std.is_null(r.obs) ? /*html*/ ` <span>${r.obs} </span>` : ""}</p>  
-        <div class="money">R$ ${replaceDotsWithCommas(std.ensure(el, KEY.VALUE, 0).toFixed(2))} </div>  
+        <div class="money">${ensureDescriptionAndValue(el)} </div>  
       </div>
        <div class="c-2">
          ${std.ensure(el, KEY.SIZE, "")}

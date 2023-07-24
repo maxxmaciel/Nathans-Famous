@@ -6,6 +6,7 @@ var KEY = {
   VALUE_ADD: "value_add",
   TOPPINGS_NAME: 'toppings_name',
   EXTRA_TOPPINGS_NAME: 'extra_toppings_name',
+  DESCRIPTION: 'description',
 };
 
 REGEX = {
