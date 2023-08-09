@@ -68,6 +68,7 @@ header span {
   background: #fff;
   width: 90vw;
   margin: 8.7vw auto;
+  padding: 2vw 0px;
   border: #1e7737 solid 0.7vw;
   border-radius: 4vw;
 }
@@ -99,10 +100,10 @@ header span {
 }
 
 .product {
-  min-height: 14vw;
-  margin: 1vw auto;
+  margin: 0 auto;
   display: flex;
   width: 90%;
+  height: auto;
 }
 
 .product .c-1 {
@@ -118,12 +119,12 @@ header span {
 }
 
 .product .c-1 > p {
-  max-width: 61%;
-  min-height: 8vw;
+  max-width: 56%;
+  min-height: 6vw;
   /* height: 100%; */
   align-items: center;
   display: flex;
-  margin-right: 3vw;
+  /* margin-right: 3vw; */
   /* padding-bottom: 0.5vw; */
 }
 
@@ -135,7 +136,9 @@ header span {
   display: flex;
   font-size: 3.2vw;
   align-items: center;
-  min-height: 8vw;
+  min-height: 5vw;
+  line-height: 3vw;
+  margin-left: 3vw;
 }
 
 .product .c-1 span {
@@ -152,9 +155,10 @@ header span {
 .product .c-2 {
   height: auto;
   font-family: "Futura_Heavy";
-  font-size: 3vw;
+  font-size: 2.5vw;
   color: #2c3232;
   text-align: justify;
+  /* margin-bottom: 0; */
 }
 
 .product .c-3 {
@@ -208,17 +212,18 @@ header span {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  clear: both;
+  /* clear: both; */
   font-family: Vhiena_Base;
   color: #2c3232;
   font-size: 6vw;
   margin: auto;
   /* border-radius: 30px; */
+  border: rgb(108,109,112) solid 0.7vw;
   border-radius: 6vw;
 }
 
 .title_toppings > p {
-  margin: 0 2vw;
+  margin: 0 1vw;
   color: #1e7737;
   display: flex;
   padding-bottom: 1.5vw;
@@ -234,9 +239,10 @@ header span {
 }
 
 .extra_toppings {
-  width: auto;
-  float: left;
-  font-size: 3.5vw;
+  /* width: auto; */
+  /* float: left; */
+  font-size: 2.5vw;
+  min-width: 50%;
   height: 4vw;
   display: flex;
   white-space: nowrap;
@@ -270,14 +276,15 @@ header span {
 .c_extra_toppings {
   display: flex;
   align-items: center;
-  align-content: center;
   flex-wrap: wrap;
-  flex-direction: row;
   height: 100%;
   width: 76%;
-  gap: 1vw 0;
+  /* gap: 1vw 0; */
   justify-content: flex-start;
   margin: 1vw;
+  flex-direction: row;
+  align-content: center;
+  /* gap: 0 14px; */
 }
 
 /*LIB */

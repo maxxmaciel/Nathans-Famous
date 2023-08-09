@@ -4,6 +4,9 @@ function render_main(text = "") {
   for (let idx in data) {
     let el = data[idx];
     var p = el.products;
+    let extra_toppings = ensureExtraToppings(el.extra_toppings)
+    let name_extra_toppings =  std.ensure(el, KEY.EXTRA_TOPPINGS_NAME, '') || 'ADICIONE:' 
+    let should_extra_toppings = extra_toppings != "" 
 
     text += /*html*/ `   
     <div class="c_products" style="flex-direction: column">
@@ -17,12 +20,19 @@ function render_main(text = "") {
           <img src="${std.ensure(el, KEY.IMAGE, "")}" />
         </div>
       </div> 
-     <div class="title_toppings c_category">
-      <p> ${std.ensure(el, KEY.EXTRA_TOPPINGS_NAME, '')} </p>
-      <div class="c_extra_toppings">
-         ${ensureExtraToppings(el.extra_toppings)}
-      </div>
-    </div> 
+      
+      ${
+        should_extra_toppings ? /*html*/`
+        <div class="title_toppings c_category">
+        <p> ${name_extra_toppings} </p>
+        <div class="c_extra_toppings">
+           ${extra_toppings}
+        </div>
+      </div> 
+        `: ''
+      }
+      
+    
   </div> 
 </div>
     `;
@@ -58,15 +68,6 @@ function replaceParentheses(text) {
   return { name: r1, obs: r2 };
 }
 
-function ensureDescriptionAndValue(p) {
-    let description = std.ensure(p, KEY.DESCRIPTION, "")
-    let value = replaceDotsWithCommas(std.ensure(p, KEY.VALUE, 0).toFixed(2))
-    if(description == "") {
-      return `R$${value}`
-    }else {
-      return `${description} - R$${value}`
-    }
-}
 
 function ensureProduct(p, text = "") {
   for (let idx in p) {
@@ -78,10 +79,10 @@ function ensureProduct(p, text = "") {
       <div class="flex-direction-column w-70">
         <div class="c-1"> 
           <p> ${r.name} ${!std.is_null(r.obs) ? /*html*/ ` <span>${r.obs} </span>` : ""}</p>  
-        <div class="money">${ensureDescriptionAndValue(el)} </div>  
+        <div class="money">${ensureSizeAndValue(el)} </div>  
       </div>
        <div class="c-2">
-         ${std.ensure(el, KEY.SIZE, "")}
+         ${std.ensure(el, KEY.OBS, "")}
        </div>
       </div>
     </div> `;
@@ -108,3 +109,9 @@ function ensureExtraToppings(t_2, text = "") {
 }
 
 const replaceDotsWithCommas = (texto) => texto.replace(/\./g, ',');
+
+const ensureSizeAndValue = (p, size = ensureSize(p), value = ensureValue(p)) => size == "" ? `R$${value}` : `${size} - R$${value}`;
+
+const ensureSize = (p) => std.ensure(p, KEY.SIZE, "");
+
+const ensureValue = (p) => replaceDotsWithCommas(std.ensure(p, KEY.VALUE, 0).toFixed(2));

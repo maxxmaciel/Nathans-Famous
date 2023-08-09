@@ -1,6 +1,7 @@
 var KEY = {
   IMAGE: "image",
   NAME: "name",
+  OBS: 'obs',
   SIZE: "size",
   VALUE: "value",
   VALUE_ADD: "value_add",
