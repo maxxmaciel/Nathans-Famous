@@ -1,0 +1,16 @@
+.category {
+    font-family: Vhiena_Base;
+    color: #2c3232;
+    rotate: 0deg;
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 4vw;
+    margin-top: 0;
+    height: 10vw;
+}
+
+c_category {
+    background: rgb(219,220,222);
+    border: 0;
+}

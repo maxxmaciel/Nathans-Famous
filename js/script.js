@@ -5,8 +5,11 @@ function render_main(text = "") {
     let el = data[idx];
     var p = el.products;
     let extra_toppings = ensureExtraToppings(el.extra_toppings)
-    let name_extra_toppings =  std.ensure(el, KEY.EXTRA_TOPPINGS_NAME, '') || 'ADICIONE:' 
+    let especial = ensureEspecial(el.especial)
+    let name_extra_toppings =  std.ensure(el, KEY.EXTRA_TOPPINGS_NAME, '') || 'ACRESCENTE:' 
+    let name_especial = 'CERVEJAS' 
     let should_extra_toppings = extra_toppings != "" 
+    let should_especial = especial != "" 
 
     text += /*html*/ `   
     <div class="c_products" style="flex-direction: column">
@@ -23,7 +26,7 @@ function render_main(text = "") {
       
       ${
         should_extra_toppings ? /*html*/`
-        <div class="title_toppings c_category">
+        <div class="title_toppings">
         <p> ${name_extra_toppings} </p>
         <div class="c_extra_toppings">
            ${extra_toppings}
@@ -31,6 +34,17 @@ function render_main(text = "") {
       </div> 
         `: ''
       }
+      ${
+        should_especial ? /*html*/`
+        <div class="c_category-especial c_category" >
+        <p class="category c_category_especial"> ${name_especial} </p>
+        <div class="c_extra_toppings">
+           ${especial}
+        </div>
+      </div> 
+        `: ''
+      }
+      
       
     
   </div> 
@@ -104,6 +118,28 @@ function ensureExtraToppings(t_2, text = "") {
       </div> 
 
     `;
+  }
+  return text;
+}
+
+
+function ensureEspecial(p, text = "") {
+  for (let idx in p) {
+    let el = p[idx];
+    var r = replaceParentheses(std.ensure(el, KEY.NAME, ""));
+
+    text += /*html*/ `
+    <div class="product"> 
+      <div class="flex-direction-column w-70">
+        <div class="c-1"> 
+          <p> ${r.name} ${!std.is_null(r.obs) ? /*html*/ ` <span>${r.obs} </span>` : ""}</p>  
+        <div class="money">${ensureSizeAndValue(el)} </div>  
+      </div>
+       <div class="c-2">
+         ${std.ensure(el, KEY.OBS, "")}
+       </div>
+      </div>
+    </div> `;
   }
   return text;
 }
